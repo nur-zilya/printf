@@ -43,10 +43,27 @@ int	ft_printf(const char *str, ...)
 					i++;
 				}
 			if (str[i] == 'd')
-			{
-				j = j + ft_putnbr(va_arg(ap, int));
-				i++;
-			}
+				{
+					j = j + ft_putnbr(va_arg(ap, int));
+					i++;
+				}
+			if (str[i] == 'x')
+				{
+					j = j + ft_tolower(va_arg(ap, int));
+					i++;
+				}
+			if (str[i] == 'X')
+				{
+					j = j + ft_toupper(va_arg(ap, int));
+					i++;
+				}
+			if (str[i] == '%')
+				{
+					j = j + write (1, "%", 1);
+					i++;
+				}
+			
+			
 		}
 	}
 	va_end(ap);
