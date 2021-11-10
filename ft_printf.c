@@ -73,5 +73,5 @@ int	ft_printf(const char *str, ...)
 
 int main()
 {
-	ft_printf("   %c     %c    %s      %d       ", 's', 'u', "str", 12);
+	ft_printf("   %c     %c    %s      %d  %%     ", 's', 'u', "str", 12);
 }
