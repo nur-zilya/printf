@@ -1,10 +1,10 @@
 #include "ft_printf.h"
 
-int ft_hex(int x)
+int ft_hex_upper(int x)
 {
 	char *str;
 
-	str = "0123456789abcdef";
+	str = "0123456789ABCDEF";
 	if (x < 16)
 		ft_putchar(str[x]);
 	else
@@ -15,10 +15,10 @@ int ft_hex(int x)
 	return (1);
 }
 
-// int main ()
-// {
-// 	int i = -125a;
+int main ()
+{
+	int i = 125;
 
-// 	ft_printf("%x\n", i);
-// 	printf("%x\n", i);
-// }
+	ft_printf("%x\n", i);
+	printf("%x\n", i);
+}
