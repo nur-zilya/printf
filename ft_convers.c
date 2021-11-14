@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_convers.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfast <hfast@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 19:13:06 by hfast             #+#    #+#             */
-/*   Updated: 2021/11/13 19:13:08 by hfast            ###   ########.fr       */
+/*   Created: 2021/11/13 19:12:20 by hfast             #+#    #+#             */
+/*   Updated: 2021/11/13 19:12:32 by hfast            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	if (str == 0)
-	{
-		write (1, "(null)", 6);
-		return (6);
-	}
-	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
+	while (str[i])
 		i++;
-	}
 	return (i);
+}
+
+int	ft_convers(unsigned int c, char *str)
+{
+	int				i;
+	unsigned int	len;
+
+	len = ft_strlen(str);
+	if (c < len)
+		return (ft_putchar(str[c]));
+	i = ft_convers(c / len, str);
+	ft_convers(c % len, str);
+	return (i + 1);
 }

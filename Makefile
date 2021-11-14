@@ -6,15 +6,14 @@
 #    By: hfast <hfast@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 13:27:28 by hfast             #+#    #+#              #
-#    Updated: 2021/11/10 16:55:08 by hfast            ###   ########.fr        #
+#    Updated: 2021/11/13 19:03:47 by hfast            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libftprintf.a
 
-SRCS	=	ft_printf.c ft_putchar.c ft_putnbr.c ft_putstr.c ft_hex.c \
-			ft_hex_upper.c
-
+SRCS	=	ft_printf.c ft_putchar.c ft_putnbr.c ft_putstr.c ft_convers.c \
+				ft_pointer.c ft_selection.c
 HEADER	=	ft_printf.h
 
 OBJ		=	$(SRCS:.c=.o)
